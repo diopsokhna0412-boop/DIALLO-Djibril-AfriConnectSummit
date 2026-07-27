@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Encodage -->
+    <meta charset="UTF-8" />
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AfriConnect Summit 2026 | Intervenant</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ==========================
+            NAVIGATION
+    ========================== -->
+
+    <header>
+      <nav class="barre-navigation">
+        <div class="conteneur">
+          <!-- LOGO -->
+
+          <a href="index.html" class="logo">
+            <i class="bi bi-globe-africa"></i>
+
+            AfriConnect Summit
+
+            <span>2026</span>
+          </a>
+
+          <!-- MENU -->
+
+          <ul class="menu-navigation">
+            <li>
+              <a href="index.html"> Accueil </a>
+            </li>
+
+            <li>
+              <a href="programme.html"> Programme </a>
+            </li>
+
+            <li>
+              <a href="intervenants.html" class="actif"> Intervenants </a>
+            </li>
+
+            <li>
+              <a href="contact.html"> Contact </a>
+            </li>
+          </ul>
+
+          <!-- ACTIONS -->
+
+          <div class="actions-navigation">
+            <!-- MODE SOMBRE -->
+
+            <button id="theme-toggle" aria-label="Changer le thème">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+
+            <!-- MENU MOBILE -->
+
+            <button id="menu-btn" aria-label="Ouvrir le menu">
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ==========================
+            CONTENU PRINCIPAL
+    ========================== -->
+
+    <main>
+      <!-- ==========================
+                HERO INTERNE
+        ========================== -->
+
+      <section class="hero-interne apparition">
+        <div class="conteneur">
+          <!-- FIL D'ARIANE -->
+
+          <p class="fil-ariane">
+            <a href="index.html"> Accueil </a>
+
+            <span> &gt; </span>
+
+            Intervenants
+          </p>
+
+          <!-- TITRE -->
+
+          <h1>Nos intervenants</h1>
+
+          <!-- DESCRIPTION -->
+
+          <p>
+            Découvrez les experts, entrepreneurs et innovateurs qui partageront
+            leur expérience lors de l'AfriConnect Summit 2026.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==========================
+                SECTION INTERVENANTS
+        ========================== -->
+
+      <section class="section-intervenants apparition">
+        <div class="conteneur">
+          <!-- TITRE -->
+
+          <div class="titre-section">
+            <h2>Rencontrez nos experts</h2>
+
+            <p>
+              Des professionnels venus de toute l'Afrique pour partager leurs
+              connaissances.
+            </p>
+          </div>
+
+          <!-- ==========================
+                        BOUTONS DE FILTRE
+                ========================== -->
+
+          <div
+            class="filtres-intervenants"
+            role="group"
+            aria-label="Filtrer les intervenants"
+          >
+            <button class="bouton-filtre actif" data-filtre="tous">Tous</button>
+
+            <button class="bouton-filtre" data-filtre="ia-tech">
+              IA & Tech
+            </button>
+
+            <button class="bouton-filtre" data-filtre="business">
+              Business
+            </button>
+
+            <button class="bouton-filtre" data-filtre="design">Design</button>
+
+            <button class="bouton-filtre" data-filtre="data">Data</button>
+          </div>
+
+          <!-- ==========================
+                        GRILLE DES INTERVENANTS
+                ========================== -->
+
+          <div class="grille-intervenants">
+            <!-- INTERVENANT 1 -->
+
+            <article class="carte-intervenant" data-categorie="ia-tech">
+              <img src="./images/femme.png" alt="Amina Diop" />
+
+              <div class="informations-intervenant">
+                <h3>Amina Diop</h3>
+
+                <p class="specialite">Experte en Intelligence Artificielle</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Sénégal
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 2 -->
+
+            <article class="carte-intervenant" data-categorie="ia-tech">
+              <img src="./images/garcon.png" alt="Emmanuel Mensah" />
+
+              <div class="informations-intervenant">
+                <h3>Emmanuel Mensah</h3>
+
+                <p class="specialite">Architecte Cloud</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Ghana
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 3 -->
+
+            <article class="carte-intervenant" data-categorie="business">
+              <img src="./images/af.jpeg" alt="Sara Ben Ali" />
+
+              <div class="informations-intervenant">
+                <h3>Sara Ben Ali</h3>
+
+                <p class="specialite">Fondatrice de Startup</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Maroc
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 4 -->
+
+            <article class="carte-intervenant" data-categorie="ia-tech">
+              <img src="images/mb.jpeg" alt="David Okoro" />
+
+              <div class="informations-intervenant">
+                <h3>David Okoro</h3>
+
+                <p class="specialite">Ingénieur Logiciel</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Nigeria
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 5 -->
+
+            <article class="carte-intervenant" data-categorie="design">
+              <img src="./images/senegal.jpeg" alt="Fatou Ndiaye" />
+
+              <div class="informations-intervenant">
+                <h3>Fatou Ndiaye</h3>
+
+                <p class="specialite">Directrice Design UX/UI</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Sénégal
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 6 -->
+
+            <article class="carte-intervenant" data-categorie="data">
+              <img src="./images/garcon2.png" alt="Jean-Pierre Kouassi" />
+
+              <div class="informations-intervenant">
+                <h3>Jean-Pierre Kouassi</h3>
+
+                <p class="specialite">Data Scientist</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Côte d'Ivoire
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 7 -->
+
+            <article class="carte-intervenant" data-categorie="business">
+              <img src="./images/kenya.jpeg" alt="Grace Wanjiku" />
+
+              <div class="informations-intervenant">
+                <h3>Grace Wanjiku</h3>
+
+                <p class="specialite">Investisseuse et entrepreneure</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Kenya
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 8 -->
+
+            <article class="carte-intervenant" data-categorie="data">
+              <img src="./images/img-g-5.jpeg" alt="Moussa Traoré" />
+
+              <div class="informations-intervenant">
+                <h3>Moussa Traoré</h3>
+
+                <p class="specialite">Expert Big Data</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Mali
+                </p>
+              </div>
+            </article>
+
+            <!-- INTERVENANT 9 -->
+
+            <article class="carte-intervenant" data-categorie="design">
+              <img src="./images/maroc.jpeg" alt="Nadia El Fassi" />
+
+              <div class="informations-intervenant">
+                <h3>Nadia El Fassi</h3>
+
+                <p class="specialite">Directrice Créative</p>
+
+                <p class="pays">
+                  <i class="bi bi-geo-alt-fill"></i>
+
+                  Maroc
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="pied-page">
+      <div class="conteneur">
+        <div class="contenu-footer">
+          <!-- À propos -->
+
+          <section class="colonne-footer">
+            <h3>AfriConnect Summit</h3>
+
+            <p>
+              Le plus grand sommet technologique panafricain réunissant
+              développeurs, entrepreneurs, investisseurs et passionnés du
+              numérique.
+            </p>
+          </section>
+
+          <!-- Navigation -->
+
+          <section class="colonne-footer">
+            <h3>Navigation</h3>
+
+            <ul>
+              <li>
+                <a href="index.html">Accueil</a>
+              </li>
+
+              <li>
+                <a href="programme.html">Programme</a>
+              </li>
+
+              <li>
+                <a href="intervenants.html">Intervenants</a>
+              </li>
+
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Réseaux sociaux -->
+
+          <section class="colonne-footer">
+            <h3>Suivez-nous</h3>
+
+            <div class="reseaux-sociaux">
+              <a href="#" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+
+              <a href="#" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+
+              <a href="#" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+
+              <a href="#" aria-label="X">
+                <i class="bi bi-twitter-x"></i>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <!-- Copyright -->
+
+        <div class="copyright">
+          <p>
+            © <span id="annee"></span>
+            AfriConnect Summit 2026 - Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================
+            BOUTON RETOUR EN HAUT
+    ========================== -->
+
+    <button id="retour-haut" aria-label="Retour en haut">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+  </body>
+</html>
