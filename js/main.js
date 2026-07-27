@@ -182,3 +182,184 @@ if (compteurs.length > 0) {
     });
 
 }
+/* =====================================================
+   6. COMPTE À REBOURS
+===================================================== */
+
+const elementJours =
+    document.querySelector("#jours");
+
+const elementHeures =
+    document.querySelector("#heures");
+
+const elementMinutes =
+    document.querySelector("#minutes");
+
+const elementSecondes =
+    document.querySelector("#secondes");
+
+
+if (
+    elementJours &&
+    elementHeures &&
+    elementMinutes &&
+    elementSecondes
+) {
+
+    const dateConference =
+        new Date(
+            "December 15, 2026 09:00:00"
+        ).getTime();
+
+
+    function mettreAJourCompteRebours() {
+
+        const maintenant =
+            new Date().getTime();
+
+        const difference =
+            dateConference - maintenant;
+
+
+        if (difference <= 0) {
+
+            elementJours.textContent = "00";
+            elementHeures.textContent = "00";
+            elementMinutes.textContent = "00";
+            elementSecondes.textContent = "00";
+
+            return;
+
+        }
+
+
+        const jours =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const heures =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60 * 60 * 24)
+                ) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60 * 60)
+                ) /
+                (1000 * 60)
+            );
+
+
+        const secondes =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60)
+                ) /
+                1000
+            );
+
+
+        elementJours.textContent =
+            String(jours).padStart(2, "0");
+
+        elementHeures.textContent =
+            String(heures).padStart(2, "0");
+
+        elementMinutes.textContent =
+            String(minutes).padStart(2, "0");
+
+        elementSecondes.textContent =
+            String(secondes).padStart(2, "0");
+
+    }
+
+
+    mettreAJourCompteRebours();
+
+    setInterval(
+        mettreAJourCompteRebours,
+        1000
+    );
+
+}
+
+
+/* =====================================================
+   7. ONGLETS DU PROGRAMME
+===================================================== */
+
+const boutonsJours =
+    document.querySelectorAll(".onglet");
+
+const contenusJours =
+    document.querySelectorAll(".planning");
+
+
+if (boutonsJours.length > 0) {
+
+    boutonsJours.forEach(function (bouton) {
+
+        bouton.addEventListener(
+            "click",
+            function () {
+
+                const jourChoisi =
+                    bouton.dataset.jour;
+
+
+                boutonsJours.forEach(
+                    function (autreBouton) {
+
+                        autreBouton.classList.remove(
+                            "actif"
+                        );
+
+                    }
+                );
+
+
+                contenusJours.forEach(
+                    function (contenu) {
+
+                        contenu.classList.remove(
+                            "actif"
+                        );
+
+                    }
+                );
+
+
+                bouton.classList.add("actif");
+
+
+                const contenuJour =
+                    document.querySelector(
+                        "#" + jourChoisi
+                    );
+
+
+                if (contenuJour) {
+
+                    contenuJour.classList.add(
+                        "actif"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+}
