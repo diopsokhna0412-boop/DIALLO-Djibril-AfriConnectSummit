@@ -1,3 +1,5 @@
+// DARK MODE / LIGHT MODE
+
 const boutonTheme = document.querySelector("#theme-toggle");
 
 const themeSauvegarde = localStorage.getItem("theme");
@@ -20,6 +22,7 @@ if (boutonTheme) {
         }
     });
 }
+// NAVBAR DYNAMIQUE
 
 const barreNavigation =
     document.querySelector(".barre-navigation");
@@ -37,6 +40,7 @@ window.addEventListener("scroll", function () {
     }
 
 });
+// MENU HAMBURGER
 
 const boutonMenu =
     document.querySelector("#menu-btn");
@@ -66,6 +70,8 @@ if (boutonMenu && menuNavigation) {
     });
 
 }
+
+// ANIMATIONS AU SCROLL
 
 const elementsAnimation =
     document.querySelectorAll(".apparition");
@@ -109,6 +115,8 @@ if (
     });
 
 }
+
+// COMPTEUR ANIMÉ
 
 const compteurs =
     document.querySelectorAll(".compteur");
@@ -182,6 +190,8 @@ if (compteurs.length > 0) {
     });
 
 }
+
+// COMPTE À REBOURS
 
 const elementJours =
     document.querySelector("#jours");
@@ -291,6 +301,8 @@ if (
 
 }
 
+// ONGLETS DU PROGRAMME
+
 const boutonsJours =
     document.querySelectorAll(".onglet");
 
@@ -355,6 +367,8 @@ if (boutonsJours.length > 0) {
     });
 
 }
+
+// FILTRAGE DES INTERVENANTS
 
 const boutonsFiltres =
     document.querySelectorAll(".bouton-filtre");
@@ -423,6 +437,8 @@ if (
     });
 
 }
+
+// VALIDATION DU FORMULAIRE
 
 const formulaire =
     document.querySelector(
@@ -698,7 +714,7 @@ if (formulaire) {
     );
 
 }
-
+//  BOUTON RETOUR EN HAUT
 
 const boutonRetour =
     document.querySelector(
@@ -746,6 +762,8 @@ if (boutonRetour) {
     );
 
 }
+
+// ANNÉE DYNAMIQUE
 
 const annee =
     new Date().getFullYear();

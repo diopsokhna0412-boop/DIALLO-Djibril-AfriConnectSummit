@@ -1,3 +1,4 @@
+/* VARIABLES CSS */
 :root {
     --couleur-principale: #2563eb;
     --couleur-secondaire: #14b8a6;
@@ -27,6 +28,8 @@
     --transition: 0.3s ease;
 }
 
+ /* MODE SOMBRE */
+
 [data-theme="dark"] {
     --couleur-fond: #0f172a;
     --couleur-surface: #1e293b;
@@ -36,6 +39,8 @@
 
     --ombre: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
+
+/* RESET GENERAL */
 
 * {
     margin: 0;
@@ -107,6 +112,8 @@ p {
     width: min(90%, 1200px);
     margin: 0 auto;
 }
+
+/* NAVBAR */
 
 .barre-navigation {
     position: fixed;
@@ -220,7 +227,7 @@ p {
     display: none;
 }
 
-
+/* HERO PRINCIPAL */
 
 .hero {
     min-height: 100vh;
@@ -256,6 +263,7 @@ p {
     font-weight: 600;
 }
 
+/* ANIMATIONS */
 
 .apparition,
 .reveal {
@@ -279,7 +287,7 @@ p {
     text-align: center;
 }
 
-
+ /* BOUTONS */
 
 .bouton-principal,
 .bouton-secondaire,
@@ -316,7 +324,7 @@ p {
     color: white;
 }
 
-
+/* COMPTE A REBOURS */
 
 .compte-a-rebours {
     padding: var(--espace-md);
@@ -347,6 +355,7 @@ p {
     font-weight: 700;
 }
 
+/* SECTIONS */
 
 section {
     padding: var(--espace-xl) 0;
@@ -363,8 +372,7 @@ section {
     font-size: 2.5rem;
 }
 
-
-
+/* STATISTIQUES */
 
 .grille-statistiques {
     display: grid;
@@ -392,7 +400,7 @@ section {
     font-size: 2.5rem;
 }
 
-
+/* POURQUOI PARTICIPER */
 
 .conteneur-participer {
     display: flex;
@@ -429,6 +437,8 @@ section {
     color: white;
     font-size: 1.8rem;
 }
+
+/* INTERVENANTS VEDETTES */
 
 .grille-intervenants-vedettes {
     display: grid;
@@ -467,6 +477,8 @@ section {
     font-weight: 500;
 }
 
+/* HERO INTERNE */
+
 .hero-interne {
     margin-top: 70px;
     padding: var(--espace-xl) 0;
@@ -492,6 +504,8 @@ section {
     align-items: center;
     gap: 0.5rem;
 }
+
+/* PROGRAMME */
 
 .onglets-programme {
     display: flex;
@@ -549,6 +563,8 @@ section {
 .tableau-programme tr:hover {
     background-color: rgba(37, 99, 235, 0.08);
 }
+
+/* THEMATIQUES */
 
 .grille-thematiques {
     display: grid;
