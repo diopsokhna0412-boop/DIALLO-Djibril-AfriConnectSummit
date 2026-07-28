@@ -182,9 +182,6 @@ if (compteurs.length > 0) {
     });
 
 }
-/* =====================================================
-   6. COMPTE À REBOURS
-===================================================== */
 
 const elementJours =
     document.querySelector("#jours");
@@ -294,11 +291,6 @@ if (
 
 }
 
-
-/* =====================================================
-   7. ONGLETS DU PROGRAMME
-===================================================== */
-
 const boutonsJours =
     document.querySelectorAll(".onglet");
 
@@ -363,3 +355,412 @@ if (boutonsJours.length > 0) {
     });
 
 }
+
+const boutonsFiltres =
+    document.querySelectorAll(".bouton-filtre");
+
+const cartesIntervenants =
+    document.querySelectorAll(".carte-intervenant");
+
+
+if (
+    boutonsFiltres.length > 0 &&
+    cartesIntervenants.length > 0
+) {
+
+    boutonsFiltres.forEach(function (bouton) {
+
+        bouton.addEventListener(
+            "click",
+            function () {
+
+                const filtre =
+                    bouton.dataset.filtre;
+
+
+                boutonsFiltres.forEach(
+                    function (autreBouton) {
+
+                        autreBouton.classList.remove(
+                            "actif"
+                        );
+
+                    }
+                );
+
+
+                bouton.classList.add("actif");
+
+
+                cartesIntervenants.forEach(
+                    function (carte) {
+
+                        const categorie =
+                            carte.dataset.categorie;
+
+
+                        if (
+                            filtre === "tous" ||
+                            categorie === filtre
+                        ) {
+
+                            carte.style.display =
+                                "block";
+
+                        } else {
+
+                            carte.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    });
+
+}
+
+const formulaire =
+    document.querySelector(
+        "#formulaire-inscription"
+    );
+
+
+if (formulaire) {
+
+    const nom =
+        document.querySelector("#nom");
+
+    const email =
+        document.querySelector("#email");
+
+    const telephone =
+        document.querySelector("#telephone");
+
+    const participation =
+        document.querySelector("#participation");
+
+    const pays =
+        document.querySelector("#pays");
+
+    const message =
+        document.querySelector("#message");
+
+    const messageSucces =
+        document.querySelector("#message-succes");
+
+
+    function afficherErreur(champ, texte) {
+
+        if (!champ) {
+            return;
+        }
+
+
+        champ.classList.remove(
+            "champ-valide"
+        );
+
+        champ.classList.add(
+            "champ-invalide"
+        );
+
+
+        const erreur =
+            champ.parentElement.querySelector(
+                ".message-erreur"
+            );
+
+
+        if (erreur) {
+
+            erreur.textContent =
+                texte;
+
+        }
+
+    }
+
+
+    function afficherSucces(champ) {
+
+        if (!champ) {
+            return;
+        }
+
+
+        champ.classList.remove(
+            "champ-invalide"
+        );
+
+        champ.classList.add(
+            "champ-valide"
+        );
+
+
+        const erreur =
+            champ.parentElement.querySelector(
+                ".message-erreur"
+            );
+
+
+        if (erreur) {
+
+            erreur.textContent = "";
+
+        }
+
+    }
+
+
+    formulaire.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            let formulaireValide = true;
+
+
+            if (
+                !nom ||
+                nom.value.trim() === ""
+            ) {
+
+                afficherErreur(
+                    nom,
+                    "Le nom complet est obligatoire."
+                );
+
+                formulaireValide = false;
+
+            } else {
+
+                afficherSucces(nom);
+
+            }
+
+
+            const regexEmail =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (
+                !email ||
+                !regexEmail.test(
+                    email.value.trim()
+                )
+            ) {
+
+                afficherErreur(
+                    email,
+                    "Veuillez entrer un email valide."
+                );
+
+                formulaireValide = false;
+
+            } else {
+
+                afficherSucces(email);
+
+            }
+
+
+            if (!telephone) {
+
+                formulaireValide = false;
+
+            } else {
+
+                const chiffresTelephone =
+                    telephone.value.replace(
+                        /\D/g,
+                        ""
+                    );
+
+
+                if (
+                    chiffresTelephone.length < 8
+                ) {
+
+                    afficherErreur(
+                        telephone,
+                        "Le téléphone doit contenir au moins 8 chiffres."
+                    );
+
+                    formulaireValide = false;
+
+                } else {
+
+                    afficherSucces(
+                        telephone
+                    );
+
+                }
+
+            }
+
+
+            if (
+                !participation ||
+                participation.value === ""
+            ) {
+
+                afficherErreur(
+                    participation,
+                    "Veuillez choisir un type de participation."
+                );
+
+                formulaireValide = false;
+
+            } else {
+
+                afficherSucces(
+                    participation
+                );
+
+            }
+
+
+            if (
+                !pays ||
+                pays.value === ""
+            ) {
+
+                afficherErreur(
+                    pays,
+                    "Veuillez choisir votre pays."
+                );
+
+                formulaireValide = false;
+
+            } else {
+
+                afficherSucces(pays);
+
+            }
+
+
+            if (
+                !message ||
+                message.value.trim().length < 20
+            ) {
+
+                afficherErreur(
+                    message,
+                    "Le message doit contenir au moins 20 caractères."
+                );
+
+                formulaireValide = false;
+
+            } else {
+
+                afficherSucces(message);
+
+            }
+
+
+            if (formulaireValide) {
+
+                if (messageSucces) {
+
+                    messageSucces.textContent =
+                        "Votre inscription a été envoyée avec succès !";
+
+                }
+
+
+                formulaire.reset();
+
+
+                const champs =
+                    formulaire.querySelectorAll(
+                        "input, select, textarea"
+                    );
+
+
+                champs.forEach(function (champ) {
+
+                    champ.classList.remove(
+                        "champ-valide"
+                    );
+
+                });
+
+            }
+
+        }
+    );
+
+}
+
+
+const boutonRetour =
+    document.querySelector(
+        "#retour-haut"
+    );
+
+
+if (boutonRetour) {
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (window.scrollY > 300) {
+
+                boutonRetour.classList.add(
+                    "visible"
+                );
+
+            } else {
+
+                boutonRetour.classList.remove(
+                    "visible"
+                );
+
+            }
+
+        }
+    );
+
+
+    boutonRetour.addEventListener(
+        "click",
+        function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+}
+
+const annee =
+    new Date().getFullYear();
+
+const elementsAnnee =
+    document.querySelectorAll(
+        "#annee"
+    );
+
+
+elementsAnnee.forEach(
+    function (element) {
+
+        element.textContent =
+            annee;
+
+    }
+);
